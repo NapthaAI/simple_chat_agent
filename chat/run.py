@@ -27,7 +27,7 @@ def run(job: InputSchema, cfg: dict = None, **kwargs):
     response.raise_for_status()
     response_json = response.json()
 
-    return response_json
+    return response_json['output']['response']
 
 if __name__ == "__main__":
     job = InputSchema(
