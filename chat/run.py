@@ -1,7 +1,7 @@
 import requests
 from chat.schemas import InputSchema
 from chat.utils import get_logger
-
+import json
 
 logger = get_logger(__name__)
 
@@ -25,7 +25,7 @@ def run(job: InputSchema, cfg: dict = None, **kwargs):
     )
 
     response.raise_for_status()
-    response_json = response.json()
+    response_json = json.loads(response.json())
 
     return response_json['output']['response']
 
