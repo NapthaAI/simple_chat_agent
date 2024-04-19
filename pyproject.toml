@@ -10,8 +10,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-requests = "^2.31.0"
 pydantic = "^2.7.0"
+litellm = "^1.35.15"
 
 
 [build-system]
