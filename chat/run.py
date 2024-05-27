@@ -8,7 +8,7 @@ import yaml
 
 logger = get_logger(__name__)
 
-def run(inputs: InputSchema, cfg: dict = None, **kwargs):
+def run(inputs: InputSchema, nodes = None, workflow_config = None, cfg: dict = None):
     logger.info(f"Running with inputs {inputs.prompt}")
     logger.info(f"cfg: {cfg}")
 
