@@ -1,20 +1,26 @@
-[tool.poetry]
+[project]
 name = "simple-chat-agent"
 version = "0.1.0"
 description = ""
-authors = ["moarshy <marshath@gmail.com>"]
+authors = [
+    {name = "moarshy", email = "marshath@gmail.com"}
+]
 readme = "README.md"
-packages = [
-    {include = "simple_chat_agent", from="."}
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "naptha-sdk",
+    "pydantic>=2.10.6",
+    "gitpython>=3.1.43",
+    "python-dotenv>=1.0.1",
 ]
 
-[tool.poetry.dependencies]
-python = ">=3.10,<=3.13"
-pydantic = "^2.7.0"
-naptha-sdk = {git = "https://github.com/NapthaAI/naptha-sdk.git"}
-python-dotenv = "^1.0.1"
-gitpython = "^3.1.43"
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["simple_chat_agent"]
+
+[tool.uv.sources]
+naptha-sdk = { git = "https://github.com/NapthaAI/naptha-sdk.git" }
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
